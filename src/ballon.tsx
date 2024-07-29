@@ -55,7 +55,7 @@ export const BubbleComponent = React.forwardRef<BubbleRef, BubbleProps>(
 
     useImperativeHandle(ref, () => ({
       setText: (text: string) => {
-        textRef.current?.setNativeProps({ text });
+        textRef.current?.setNativeProps({ text : Number(text).toFixed(0) + '%' });
       },
     }));
     return (
