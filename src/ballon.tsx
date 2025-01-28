@@ -61,7 +61,7 @@ export const BubbleComponent = React.forwardRef<BubbleRef, BubbleProps>(
         if (Platform.OS === 'web') {
           setInputValue(text);
         } else {
-          textRef.current?.setNativeProps({ text });
+          textRef.current?.setNativeProps({ text : Number(text).toFixed(0) + '%' });
         }
       },
     }));
